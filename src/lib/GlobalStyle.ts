@@ -1,5 +1,5 @@
-'use client'
-import { createGlobalStyle } from 'styled-components'
+'use client';
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -25,6 +25,6 @@ const GlobalStyle = createGlobalStyle`
   ol, ul {
     list-style: none;
   }
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;

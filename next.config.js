@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   compiler: (() => {
-    let compilerConfig = {}
+    let compilerConfig = {};
 
     if (process.env.NODE_ENV === 'production') {
       compilerConfig = {
@@ -10,10 +10,18 @@ const nextConfig = {
         reactRemoveProperties: {
           properties: ['^data-testid$'],
         },
-      }
+      };
     }
-    return compilerConfig
+    return compilerConfig;
   })(),
-}
+  async rewrites() {
+    return [
+      {
+        source: `${process.env.NEXT_PUBLIC_API_BASE_PATH}/:match*`,
+        destination: `${process.env.API_BASE_URL}/:match*`,
+      },
+    ];
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

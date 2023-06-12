@@ -1,10 +1,10 @@
 const fontSizes = {
-  extraSmall: 12,
-  small: 14,
-  medium: 16,
-  mediumLarge: 20,
-  large: 24,
-  extraLarge: 32,
-}
+  extraSmall: '12px',
+  small: '14px',
+  medium: '16px',
+  mediumLarge: '20px',
+  large: '24px',
+  extraLarge: '32px',
+};
 
-export default fontSizes
+export default fontSizes;

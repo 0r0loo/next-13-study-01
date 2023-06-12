@@ -9,9 +9,9 @@ const colors = {
   danger: '#ed1c24',
   dangerDark: '#a50d12',
   gray: '#6b6b6b',
-  black: '#000',
-  white: '#fff',
-  text: '#000',
-} as const
+  black: '#000000',
+  white: '#ffffff',
+  text: '#000000',
+} as const;
 
-export default colors
+export default colors;

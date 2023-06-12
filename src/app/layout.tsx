@@ -1,10 +1,11 @@
-import './globals.css'
-import { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import GlobalStyle from '@/lib/GlobalStyle'
-import StyledComponentsRegistry from '@/lib/registry'
+import './globals.css';
+import { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import GlobalStyle from '@/lib/GlobalStyle';
+import ThemeProvider from '@/lib/ThemeProvider';
+import StyledComponentsRegistry from '@/lib/registry';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,21 +19,23 @@ export const metadata: Metadata = {
     initialScale: 1,
     maximumScale: 5,
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="ko">
       <body className={inter.className}>
         <StyledComponentsRegistry>
-          <GlobalStyle />
-          {children}
+          <ThemeProvider>
+            <GlobalStyle />
+            {children}
+          </ThemeProvider>
         </StyledComponentsRegistry>
       </body>
     </html>
-  )
+  );
 }
